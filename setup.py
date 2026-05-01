@@ -8,7 +8,8 @@ setup(
     py_modules=["autonimation"],
     install_requires=[
         "numpy",
-        "scipy"
+        "scipy",
+        "python-dotenv"
     ],
     classifiers=[
         "Development Status :: 3 - Alpha",

@@ -23,6 +23,12 @@ except ImportError:
     _install_dependency("scipy")
 
 try:
+    from dotenv import load_dotenv
+except ImportError:
+    _install_dependency("python-dotenv")
+    from dotenv import load_dotenv
+
+try:
     import bpy
 except ImportError:
     print("Warning: bpy not found. This module must be run within Blender.")
@@ -39,7 +45,19 @@ class Autonimation:
         self.style = style
         self.is_headless = is_headless
         self.context_memory = {}
+
+        # Load API Keys
+        self._load_environment_variables()
+
         print(f"Autonimation Initialized. Style: {self.style}, Headless: {self.is_headless}")
+
+    def _load_environment_variables(self):
+        """Load API keys from .env into memory context."""
+        load_dotenv()
+        self.context_memory['HF_TOKEN'] = os.getenv('HF_TOKEN')
+        self.context_memory['OPENAI_API_KEY'] = os.getenv('OPENAI_API_KEY')
+        self.context_memory['TRIPOSR_ENDPOINT'] = os.getenv('TRIPOSR_ENDPOINT')
+        print("Environment variables loaded. Ready for generation APIs.")
 
     # --------------------------------------------------------------------------
     # ERROR RECOVERY & CONTEXT OVERRIDES

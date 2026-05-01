@@ -33,6 +33,12 @@ Autonimation dynamically resolves missing tools by wrapping GitHub repository in
 - `StableGen`
 - `SOMA` / `VIPER-Blender-Mocap`
 
+## API Configuration
+Autonimation requires several free API keys to access external AI generative models (e.g., Hugging Face models for PBR texturing).
+1. Copy the `.env.example` file to `.env`:
+   `cp .env.example .env`
+2. Populate the `.env` file with your free tier API keys.
+
 ## Installation
 Run `python setup.py install` within Blender's bundled Python distribution.
 
