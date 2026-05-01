@@ -55,9 +55,11 @@ class Autonimation:
         """Load API keys from .env into memory context."""
         load_dotenv()
         self.context_memory['HF_TOKEN'] = os.getenv('HF_TOKEN')
-        self.context_memory['OPENAI_API_KEY'] = os.getenv('OPENAI_API_KEY')
         self.context_memory['TRIPOSR_ENDPOINT'] = os.getenv('TRIPOSR_ENDPOINT')
-        print("Environment variables loaded. Ready for generation APIs.")
+        self.context_memory['CEREBRAS_API_KEY'] = os.getenv('CEREBRAS_API_KEY')
+        self.context_memory['TOGETHER_API_KEY'] = os.getenv('TOGETHER_API_KEY')
+        self.context_memory['GROQ_API_KEY'] = os.getenv('GROQ_API_KEY')
+        print("Environment variables loaded. Ready for cloud generation APIs.")
 
     # --------------------------------------------------------------------------
     # ERROR RECOVERY & CONTEXT OVERRIDES

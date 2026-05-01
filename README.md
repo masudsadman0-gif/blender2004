@@ -34,10 +34,12 @@ Autonimation dynamically resolves missing tools by wrapping GitHub repository in
 - `SOMA` / `VIPER-Blender-Mocap`
 
 ## API Configuration
-Autonimation requires several free API keys to access external AI generative models (e.g., Hugging Face models for PBR texturing).
+Autonimation relies on freely hosted cloud API endpoints to avoid restrictive paid APIs and to eliminate the need for heavy local PC hardware requirements.
+It supports loading free-tier API parameters for Hugging Face Serverless, Cerebras Cloud, Together AI, and Groq for autonomous AI integrations.
+
 1. Copy the `.env.example` file to `.env`:
    `cp .env.example .env`
-2. Populate the `.env` file with your free tier API keys.
+2. Populate the `.env` file with your respective free cloud API keys.
 
 ## Installation
 Run `python setup.py install` within Blender's bundled Python distribution.
